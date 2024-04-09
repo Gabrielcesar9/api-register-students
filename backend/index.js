@@ -103,6 +103,10 @@ app.get('/base', jsonParser, (req,res)=>{
 
 })
 
+app.get('/',(req,res)=>{
+    res.send('Hello World')
+})
+
 app.listen(port, ()=>{
     console.log(`server is running at port ${port}`)
 })
