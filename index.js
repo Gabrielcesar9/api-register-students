@@ -7,17 +7,10 @@ const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json()
 
 app.use(cors({
-    origin:'http://127.0.0.1:5500',
+    origin:'*',
     methods:['GET','PUT', 'POST','DELETE']
 }))
 
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    next();
-});
 
 app.get('/check',jsonParser, (req, res)=>{
     const uri = "mongodb+srv://212083:ForIonia@achilles.ckale.mongodb.net/";
