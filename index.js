@@ -6,7 +6,7 @@ const port = process.env.PORT || 3001;
 const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json()
 
-*app.use(cors({
+app.use(cors({
     origin:'https://flyenglish-frontend.vercel.app/',
     methods:['GET','PUT', 'POST','DELETE']
 }))
