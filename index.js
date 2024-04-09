@@ -6,17 +6,12 @@ const port = process.env.PORT || 3001;
 const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json()
 
-/*app.use(cors({
-    origin:'*',
-    methods:['GET','PUT', 'POST','DELETE']
-}))*/
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://flyenglish-frontend.vercel.app');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
-    next();
-  });
+app.use(cors({
+    origin:'https://flyenglish-frontend.vercel.app',
+    methods:['GET','PUT', 'POST','DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}))
+
 
 app.get('/check',jsonParser, (req, res)=>{
     const uri = "mongodb+srv://212083:ForIonia@achilles.ckale.mongodb.net/";
