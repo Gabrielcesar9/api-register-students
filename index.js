@@ -1,15 +1,15 @@
 const express = require('express')
 const { MongoClient } = require('mongodb');
 const app = express();
-const cors = require('cors')
+//const cors = require('cors')
 const port = process.env.PORT || 3001;
 const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json()
 
-app.use(cors({
+/*app.use(cors({
     origin:'http://127.0.0.1:5500',
     methods:['GET','PUT', 'POST','DELETE']
-}))
+}))*/
 
 app.get('/check',jsonParser, (req, res)=>{
     const uri = "mongodb+srv://212083:ForIonia@achilles.ckale.mongodb.net/";
