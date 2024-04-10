@@ -109,7 +109,7 @@ app.get('/base', jsonParser, (req,res)=>{
 
 app.options('/managerlogin', cors({
     
-    origin:'https://flyenglish-orcin.vercel.app',
+    origin:'https://flyenglish.app',
     methods:['GET','PUT','POST','DELETE','OPTIONS'],
     credentials:true,
     allowedHeaders:['Accept', 'Accept-Language', 'Content-Language', 'Content-Type']
@@ -117,7 +117,7 @@ app.options('/managerlogin', cors({
 }))
 app.options('/base', cors({
     
-    origin:'https://flyenglish-orcin.vercel.app',
+    origin:'https://flyenglish.app',
     methods:['GET','PUT','POST','DELETE','OPTIONS'],
     credentials:true,
     allowedHeaders:['Accept', 'Accept-Language', 'Content-Language', 'Content-Type']
