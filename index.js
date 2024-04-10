@@ -115,7 +115,14 @@ app.options('/managerlogin', cors({
     allowedHeaders:['Accept', 'Accept-Language', 'Content-Language', 'Content-Type']
 
 }))
+app.options('/base', cors({
+    
+    origin:'https://flyenglish-orcin.vercel.app',
+    methods:['GET','PUT','POST','DELETE','OPTIONS'],
+    credentials:true,
+    allowedHeaders:['Accept', 'Accept-Language', 'Content-Language', 'Content-Type']
 
+}))
 app.get('/',(req,res)=>{
     res.send('Hello World')
 })
