@@ -10,7 +10,7 @@ app.use(cors({
     origin:'https://flyenglish-orcin.vercel.app',
     methods:['GET','PUT','POST','DELETE','OPTIONS'],
     credentials:true,
-    allowedHeaders:['Accept', 'Accept-Language', 'Content-Language', 'Content-Type', 'access-control-allow-origin']
+    allowedHeaders:['Accept', 'Accept-Language', 'Content-Language', 'Content-Type', 'Access-Control-Allow-Origin']
 }))
 
 app.get('/check',jsonParser, (req, res)=>{
