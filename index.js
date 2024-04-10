@@ -80,6 +80,9 @@ app.post('/managerlogin', jsonParser, (req,res)=>{
     if(login=='analia09' && senha =='1234'){
         res.send({status:200})
     }
+    else{
+        res.send({status:199})
+    }
 })
 
 app.get('/base', jsonParser, (req,res)=>{
