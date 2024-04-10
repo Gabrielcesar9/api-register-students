@@ -105,6 +105,9 @@ app.get('/base', jsonParser, (req,res)=>{
 
 })
 
+app.options('/managerlogin', cors({
+    methods:['GET','POST','PUT']
+}))
 app.get('/',(req,res)=>{
     res.send('Hello World')
 })
