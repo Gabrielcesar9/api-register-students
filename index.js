@@ -9,7 +9,8 @@ const jsonParser = bodyParser.json()
 app.use(cors({
     origin:'https://flyenglish-orcin.vercel.app',
     methods:['GET','PUT','POST','DELETE','OPTIONS'],
-    credentials:true
+    credentials:true,
+    allowedHeaders: ['Content-Type', 'Authorization']
 }))
 
 app.get('/check',jsonParser, (req, res)=>{
