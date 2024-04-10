@@ -6,12 +6,7 @@ const port = process.env.PORT || 3001;
 const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json()
 
-app.use(cors({
-    origin:'https://flyenglish-orcin.vercel.app',
-    methods:['GET','PUT','POST','DELETE','OPTIONS'],
-    credentials:true,
-    allowedHeaders:['Accept', 'Accept-Language', 'Content-Language', 'Content-Type']
-}))
+app.use(cors({}))
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     next();
@@ -110,9 +105,12 @@ app.get('/base', jsonParser, (req,res)=>{
 })
 
 app.options('/managerlogin', cors({
+    
     origin:'https://flyenglish-orcin.vercel.app',
-    methods:['GET','POST','PUT', 'OPTIONS'],
-    allowedHeaders:['Content-Type']
+    methods:['GET','PUT','POST','DELETE','OPTIONS'],
+    credentials:true,
+    allowedHeaders:['Accept', 'Accept-Language', 'Content-Language', 'Content-Type']
+
 }))
 
 app.get('/',(req,res)=>{
