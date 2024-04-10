@@ -7,8 +7,9 @@ const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json()
 
 app.use(cors({
-    origin:'*',
-    methods:['GET','PUT','POST','DELETE', 'OPTIONS'],
+    origin:'https://flyenglish-orcin.vercel.app/',
+    methods:['GET','PUT','POST','DELETE','OPTIONS'],
+    credentials:true
 }))
 
 app.get('/check',jsonParser, (req, res)=>{
