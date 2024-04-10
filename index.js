@@ -12,7 +12,7 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']
 }))
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Headers","*")
+    res.header("Access-Control-Allow-Origin","*")
   })
 
 app.get('/check',jsonParser, (req, res)=>{
