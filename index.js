@@ -8,7 +8,7 @@ const jsonParser = bodyParser.json()
 
 app.use(cors({
     origin:'*',
-    methods:['GET','PUT', 'POST','DELETE', 'OPTIONS'],
+    methods:['GET','PUT','POST','DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }))
 
