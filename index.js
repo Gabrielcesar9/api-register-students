@@ -11,7 +11,9 @@ app.use(cors({
     methods:['GET','PUT','POST','DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }))
-
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Headers","*")
+  })
 
 app.get('/check',jsonParser, (req, res)=>{
     const uri = "mongodb+srv://212083:ForIonia@achilles.ckale.mongodb.net/";
