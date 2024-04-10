@@ -9,11 +9,7 @@ const jsonParser = bodyParser.json()
 app.use(cors({
     origin:'*',
     methods:['GET','PUT','POST','DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
 }))
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin","*")
-  })
 
 app.get('/check',jsonParser, (req, res)=>{
     const uri = "mongodb+srv://212083:ForIonia@achilles.ckale.mongodb.net/";
