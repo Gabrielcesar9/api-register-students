@@ -10,8 +10,12 @@ app.use(cors({
     origin:'https://flyenglish-orcin.vercel.app',
     methods:['GET','PUT','POST','DELETE','OPTIONS'],
     credentials:true,
-    allowedHeaders:['Accept', 'Accept-Language', 'Content-Language', 'Content-Type', 'Access-Control-Allow-Origin']
+    allowedHeaders:['Accept', 'Accept-Language', 'Content-Language', 'Content-Type']
 }))
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+  });
 
 app.get('/check',jsonParser, (req, res)=>{
     const uri = "mongodb+srv://212083:ForIonia@achilles.ckale.mongodb.net/";
@@ -108,6 +112,7 @@ app.get('/base', jsonParser, (req,res)=>{
 app.options('/managerlogin', cors({
     methods:['GET','POST','PUT']
 }))
+
 app.get('/',(req,res)=>{
     res.send('Hello World')
 })
